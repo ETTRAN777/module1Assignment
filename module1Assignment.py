@@ -46,11 +46,10 @@ full_df.loc[full_df['Item Type'] == 'Fries', 'Value Metric'] = full_df['Total Fa
 # For Tea: Minimize Sugar per Dollar
 full_df.loc[full_df['Item Type'] == 'Sweet Tea', 'Value Metric'] = full_df['Sugars (g)'] / full_df['Price']
 
-
-# --- 3. Create Comparison Table ---
-
-print("--- Full Comparison Table ---")
-print(full_df.to_markdown(index=False))
+# --- 3. Save Data to CSV ---
+# This line creates the CSV file in the same directory as the script.
+full_df.to_csv('comparison_data.csv', index=False)
+print("Data saved to comparison_data.csv")
 
 
 # --- 4. Visualization ---
